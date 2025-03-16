@@ -3,102 +3,798 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willkommen bei KMR</title>
+    <meta name="description" content="KMR – Dezentrale KI für eine bessere Welt mit Mathe, Firmengründung und mehr">
+    <meta name="keywords" content="dezentrale KI, KMR, künstliche Intelligenz, Mathe, Firmengründung, Selbstständigkeit, Autos">
+    <meta name="author" content="KMR Team">
+    <meta property="og:title" content="KMR – Dezentrale KI">
+    <meta property="og:description" content="Entdecke KMR: KI für Mathe, Firmengründung, Selbstständigkeit und mehr!">
+    <meta property="og:image" content="https://kmr.ai/og-image.jpg">
+    <meta property="og:url" content="https://kmr.ai">
+    <title>KMR – Dezentrale KI für eine bessere Welt</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1e90ff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #1e90ff;
-        }
-        p {
+            background: linear-gradient(135deg, #F5F7FA 0%, #E0E7FF 100%);
+            color: #333333;
             line-height: 1.6;
+            overflow-x: hidden;
+            transition: background 0.5s ease;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1C2526 0%, #2E3B55 100%);
+            color: #E0E7FF;
         }
-        li {
-            background-color: #e6f2ff;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1e90ff;
-            color: white;
+
+        /* Header */
+        header {
             position: fixed;
-            bottom: 0;
+            top: 0;
             width: 100%;
+            background: rgba(75, 0, 130, 0.9);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        a {
-            color: #1e90ff;
+
+        header .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00CED1;
+            text-transform: uppercase;
+            animation: pulseLogo 2s infinite;
+        }
+
+        @keyframes pulseLogo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 400;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #FF6F61;
+            color: #FFFFFF;
+        }
+
+        #darkModeToggle {
+            background: #00CED1;
+            border: none;
+            padding: 10px 20px;
+            color: #FFFFFF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #darkModeToggle:hover {
+            background: #FF6F61;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('particles-bg.png') no-repeat center;
+            opacity: 0.1;
+            animation: moveParticles 20s infinite linear;
+        }
+
+        @keyframes moveParticles {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            color: #4B0082;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            color: #333333;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease 0.5s;
+            animation-fill-mode: both;
+        }
+
+        .cta-button {
+            background: #00CED1;
+            color: #FFFFFF;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulseButton 2s infinite;
+        }
+
+        @keyframes pulseButton {
+            0% { box-shadow: 0 0 0 0 rgba(0, 206, 209, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 206, 209, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 206, 209, 0); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 206, 209, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 50px;
+            background: #FFFFFF;
+            text-align: center;
+            transition: background 0.5s ease;
+        }
+
+        body.dark-mode .features {
+            background: #2E3B55;
+        }
+
+        .features h2 {
+            font-size: 40px;
+            color: #4B0082;
+            margin-bottom: 60px;
+            animation: fadeIn 1s ease;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #F5F7FA;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.5s ease;
+            animation-fill-mode: both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        body.dark-mode .feature-card {
+            background: #3E4C66;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: #FF6F61;
+            margin-bottom: 20px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #333333;
+        }
+
+        body.dark-mode .feature-card p {
+            color: #E0E7FF;
+        }
+
+        /* Interactive Demo */
+        .demo {
+            padding: 100px 50px;
+            background: linear-gradient(135deg, #4B0082 0%, #00CED1 100%);
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+
+        .demo h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            outline: none;
+            background: #FFFFFF;
+            color: #333333;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .demo-input:focus {
+            box-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+        }
+
+        .demo-button {
+            background: #FF6F61;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: #FF4500;
+            transform: scale(1.05);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress {
+            height: 100%;
+            background: #00CED1;
+            width: 0;
+            transition: width 2s ease;
+        }
+
+        #demo-output {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        #demo-canvas {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            margin: 20px auto;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+        }
+
+        /* CMD-Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #1C2526;
+            color: #00FF00;
+            padding: 20px;
+            border-radius: 5px;
+            width: 400px;
+            max-width: 90%;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .modal-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: #FF6F61;
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            padding: 100px 50px;
+            background: #F5F7FA;
+            text-align: center;
+        }
+
+        body.dark-mode .fun-facts {
+            background: #3E4C66;
+        }
+
+        .fun-facts h2 {
+            font-size: 40px;
+            color: #4B0082;
+            margin-bottom: 40px;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .fact-card {
+            background: #2E3B55;
+        }
+
+        .fact-card p {
+            font-size: 16px;
+        }
+
+        /* Download Section */
+        .download {
+            padding: 100px 50px;
+            text-align: center;
+            background: #FFFFFF;
+        }
+
+        body.dark-mode .download {
+            background: #2E3B55;
+        }
+
+        .download h2 {
+            font-size: 40px;
+            color: #4B0082;
+            margin-bottom: 40px;
+        }
+
+        .download-button {
+            background: #4B0082;
+            color: #FFFFFF;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .download-button:hover {
+            background: #6A0DAD;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px;
+            background: #333333;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00CED1;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+
+        footer a:hover {
+            color: #FF6F61;
+        }
+
+        /* Animationen */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .features, .demo, .fun-facts, .download {
+                padding: 50px 20px;
+            }
+
+            .demo-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Willkommen bei KMR</h1>
-        <p>Die Zukunft der dezentralen Finanzen</p>
+        <div class="logo">KMR</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#fun-facts">Fun Facts</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><button id="darkModeToggle">Dunkelmodus</button></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <h2>Über KMR</h2>
-        <p>KMR ist eine dezentrale Kryptowährung, die darauf abzielt, digitale Transaktionen zu revolutionieren. Mit einem Fokus auf Sicherheit, Skalierbarkeit und Community-Beteiligung haben wir eine Plattform geschaffen, die es jedem ermöglicht, Teil der Blockchain-Revolution zu werden.</p>
-        
-        <h2>Unsere Errungenschaften</h2>
-        <ul>
-            <li>Erfolgreicher Start des KMR-Netzwerks</li>
-            <li>Integration von Mining-Funktionen für die Community</li>
-            <li>Entwicklung einer benutzerfreundlichen Wallet</li>
-            <li>Aufbau einer wachsenden Community auf GitHub und Twitter</li>
-        </ul>
-        
-        <h2>So steigst du ein</h2>
-        <p>Folge diesen einfachen Schritten, um Teil des KMR-Netzwerks zu werden:</p>
-        <ol>
-            <li>Klone das Repository von GitHub: <a href="https://github.com/Ser0101/Komara-network.git" target="_blank">https://github.com/Ser0101/Komara-network.git</a></li>
-            <li>Navigiere in das Verzeichnis: <code>cd Komara-network</code></li>
-            <li>Baue das Projekt: <code>cargo build --release</code></li>
-            <li>Starte den Mining-Prozess: <code>cargo run --release -- mine</code></li>
-            <li>Lies das README für weitere Informationen: <a href="https://github.com/Ser0101/Komara-network/blob/main/README.md" target="_blank">README.md</a></li>
-        </ol>
-        
-        <h2>Kontakt</h2>
-        <p>Wenn du Fragen hast oder Teil der Community werden möchtest, erreichst du uns über:</p>
-        <ul>
-            <li>GitHub: <a href="https://github.com/Ser0101" target="_blank">Ser0101</a></li>
-            <li>Twitter: <a href="https://twitter.com/KomaraNetwork" target="_blank">@KomaraNetwork</a></li>
-        </ul>
-    </div>
-    <footer>
-        <p>&copy; 2023 KMR - Alle Rechte vorbehalten</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Dezentrale KI für eine bessere Welt</h1>
+            <p>KMR nutzt KI, um Mathe-Fragen zu lösen, Tipps zu Firmengründung und Selbstständigkeit zu geben und vieles mehr!</p>
+            <a href="#demo" class="cta-button">Teste unsere KI</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Warum KMR?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Transparenz</h3>
+                <p>Unsere dezentrale KI sorgt für offene und nachvollziehbare Prozesse.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Sicherheit</h3>
+                <p>Mit modernster Technologie schützen wir Daten und Privatsphäre.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Vielseitigkeit</h3>
+                <p>Von Mathe über Firmengründung bis zu Autofakten – KMR kann alles!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="demo" id="demo">
+        <h2>Erlebe dezentrale KI live</h2>
+        <div class="demo-container">
+            <input type="text" id="demo-input" class="demo-input" placeholder="Frage nach Mathe, Firmengründung oder Autos...">
+            <label><input type="checkbox" id="disable-speech"> Sprachausgabe deaktivieren</label>
+            <button class="demo-button" onclick="runDemo()">KI starten</button>
+            <button class="demo-button" onclick="openModal('login-modal')">Anmeldung</button>
+            <button class="demo-button" onclick="openModal('wallet-modal')">Wallet</button>
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <canvas id="demo-canvas"></canvas>
+            <div id="demo-output"></div>
+        </div>
+
+        <!-- CMD-Modals -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('login-modal')">&times;</span>
+                <h3>ANMELDUNG</h3>
+                <p>>> Gehe zu kmr.ai/register<br>>> Gib deine E-Mail und ein Passwort ein<br>>> Bestätige deine Anmeldung per E-Mail<br>>> Fertig!</p>
+            </div>
+        </div>
+        <div id="wallet-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('wallet-modal')">&times;</span>
+                <h3>WALLET ERSTELLEN</h3>
+                <p>>> Lade eine Wallet-App herunter (z. B. MetaMask)<br>>> Erstelle ein neues Wallet<br>>> Sichere deinen Seed-Phrase<br>>> Verbinde es mit KMR!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts" id="fun-facts">
+        <h2>Tolle Fakten</h2>
+        <div class="facts-grid">
+            <div class="fact-card">
+                <p>Das erste Auto wurde 1886 von Carl Benz gebaut.</p>
+            </div>
+            <div class="fact-card">
+                <p>KI kann in Sekunden Millionen von Berechnungen durchführen.</p>
+            </div>
+            <div class="fact-card">
+                <p>Die meisten Start-ups scheitern wegen fehlender Marktanalyse.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <h2>Jetzt teilnehmen</h2>
+        <p>Lade das KMR-Projekt herunter und werde Teil der Bewegung!</p>
+        <a href="https://github.com/Ser0101/Komara-network" class="download-button" target="_blank">Download</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2023 KMR. Alle Rechte vorbehalten. | <a href="mailto:info@kmr.ai">info@kmr.ai</a></p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Canvas-Setup für KI-Visualisierung
+        const canvas = document.getElementById('demo-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 800;
+        canvas.height = 300;
+
+        const nodes = [];
+        const connections = [];
+        const numberOfNodes = 30;
+
+        class Node {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5 + 3;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.active = false;
+                this.thinking = false;
+            }
+
+            update() {
+                if (this.thinking) {
+                    this.speedX = Math.random() * 4 - 2;
+                    this.speedY = Math.random() * 4 - 2;
+                } else {
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                }
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+            }
+
+            draw() {
+                ctx.fillStyle = this.active ? '#FF6F61' : this.thinking ? '#00CED1' : '#FFFFFF';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initNodes() {
+            nodes.length = 0;
+            for (let i = 0; i < numberOfNodes; i++) {
+                nodes.push(new Node());
+            }
+        }
+
+        function connectNodes() {
+            connections.length = 0;
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100 && (nodes[i].active || nodes[j].active || nodes[i].thinking || nodes[j].thinking)) {
+                        connections.push({ start: nodes[i], end: nodes[j] });
+                    }
+                }
+            }
+        }
+
+        function animateNodes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            connectNodes();
+            for (let i = 0; i < connections.length; i++) {
+                ctx.strokeStyle = 'rgba(255, 111, 97, 0.5)';
+                ctx.beginPath();
+                ctx.moveTo(connections[i].start.x, connections[i].start.y);
+                ctx.lineTo(connections[i].end.x, connections[i].end.y);
+                ctx.stroke();
+            }
+            for (let i = 0; i < nodes.length; i++) {
+                nodes[i].update();
+                nodes[i].draw();
+            }
+            requestAnimationFrame(animateNodes);
+        }
+
+        initNodes();
+        animateNodes();
+
+        // KI-Demo-Funktion
+        function runDemo() {
+            const input = document.getElementById('demo-input').value.trim();
+            const output = document.getElementById('demo-output');
+            const progressBar = document.getElementById('progress-bar');
+            const progress = document.getElementById('progress');
+            const disableSpeech = document.getElementById('disable-speech').checked;
+            output.style.display = 'block';
+            progressBar.style.display = 'block';
+            progress.style.width = '0';
+
+            if (!input) {
+                output.innerHTML = "Bitte gib eine Frage oder Aufgabe ein!";
+                if (!disableSpeech) speak("Bitte gib eine Frage oder Aufgabe ein!");
+                setTimeout(() => {
+                    output.style.display = 'none';
+                    progressBar.style.display = 'none';
+                }, 2000);
+                return;
+            }
+
+            output.innerHTML = "KI verarbeitet deine Anfrage...";
+            progress.style.width = '100%';
+
+            nodes.forEach(node => {
+                node.active = false;
+                node.thinking = true;
+            });
+
+            setTimeout(() => {
+                nodes.forEach(node => node.thinking = false);
+                let response;
+                if (input.toLowerCase().includes("welt verbessern")) {
+                    response = "Dezentrale KI kann die Welt verbessern, indem sie transparente Entscheidungen ermöglicht.";
+                } else if (input.toLowerCase().includes("was ist kmr")) {
+                    response = "KMR ist eine Plattform für dezentrale KI, die Sicherheit und Vielseitigkeit bietet.";
+                } else if (input.toLowerCase().includes("mathe")) {
+                    response = solveMath(input);
+                } else if (input.toLowerCase().includes("firmengründung")) {
+                    response = "Für eine Firmengründung brauchst du eine Vision, einen Businessplan und Finanzierung.";
+                } else if (input.toLowerCase().includes("selbstständigkeit")) {
+                    response = "Selbstständigkeit erfordert Disziplin und ein starkes Netzwerk.";
+                } else if (input.toLowerCase().includes("autos")) {
+                    response = "Das erste Auto wurde 1886 gebaut, heute dominieren Elektroautos.";
+                } else {
+                    response = "Interessante Eingabe! Probier mal: 'Löse 5 + 3' oder 'Tipps zur Firmengründung'.";
+                }
+                output.innerHTML = `<strong>Antwort:</strong> ${response}`;
+                if (!disableSpeech) speak(response);
+                progressBar.style.display = 'none';
+            }, 2000);
+        }
+
+        // Mathe-Lösungsfunktion
+        function solveMath(input) {
+            try {
+                const result = eval(input.replace(/[^0-9+\-*/().]/g, ""));
+                if (typeof result === 'number' && !isNaN(result)) {
+                    return `Das Ergebnis ist ${result}.`;
+                } else {
+                    return "Das ist keine gültige Mathe-Aufgabe.";
+                }
+            } catch (error) {
+                return "Fehler bei der Berechnung. Überprüfe deine Eingabe.";
+            }
+        }
+
+        // Sprachausgabe-Funktion
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.pitch = 1;
+            utterance.rate = 1.2; // Schneller und geschmeidiger
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Modal-Funktionen
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Dunkelmodus-Schalter
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.textContent = document.body.classList.contains('dark-mode') ? 'Hellmodus' : 'Dunkelmodus';
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
